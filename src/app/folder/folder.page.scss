@@ -1,0 +1,59 @@
+ion-menu-button {
+  color: var(--ion-color-primary);
+}
+
+
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.input-item {
+  --padding-start: 10px;
+  --padding-end: 10px;
+  margin-bottom: 16px;
+  font-size: 25px;
+}
+
+.login-button {
+  --background: var(--ion-color-primary);
+  --color: #ffffff;
+  margin-top: 50px;
+}
+
+.products-container .card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.product-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  margin: 3%;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.features-container {
+  text-align: left;
+}
+
+.contact-container {
+  padding: 20px;
+  text-align: left;
+}
+
+ion-card{
+  background-color: black;
+  padding-left: 0%;
+  margin-left: 0%;
+}

@@ -1,0 +1,98 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ folder }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ folder }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ng-container [ngSwitch]="folder">
+      <div *ngSwitchCase="'home'" class="login-container">
+        <ion-card>
+          <ion-card-header style="background-color: black;">
+            <ion-card-title>Login</ion-card-title>
+          </ion-card-header>
+          <ion-card-content style="background-color: black;">
+            <form (ngSubmit)="login()">
+              <ion-item class="input-item">
+                <ion-label position="floating">Username</ion-label>
+                <ion-input [(ngModel)]="username" name="username" required></ion-input>
+              </ion-item>
+              <ion-item class="input-item">
+                <ion-label position="floating">Password</ion-label>
+                <ion-input [(ngModel)]="password" name="password" type="password" required></ion-input>
+              </ion-item>
+              <ion-button expand="block" type="submit" class="login-button">Login</ion-button>
+            </form>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <div *ngSwitchCase="'products'" class="products-container">
+        <div class="card-grid">
+          <ng-container *ngFor="let card of cards">
+            <ion-card class="product-card">
+              <img [src]="card.img" [alt]="card.title" />
+              <ion-card-header>
+                <ion-card-title style="font-size: 27px;">{{ card.title }}</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                {{ card.content }}
+              </ion-card-content>
+            </ion-card>
+          </ng-container>
+        </div>
+      </div>
+
+      <div *ngSwitchCase="'contact-us'" class="contact-container">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Contact Us</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <div>
+              <p>Discover more at <a href="https://ionicframework.com/docs/components" target="_blank" rel="noopener noreferrer">Ionic Components</a></p>
+
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <div *ngSwitchCase="'about-us'" class="about-container">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>About Us</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <div>
+              <p>Discover more at <a href="https://ionicframework.com/docs/components" target="_blank" rel="noopener noreferrer">Ionic Components</a></p>
+
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <div *ngSwitchCase="'features'" class="features-container">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>More Features</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <div>
+              <p>Discover more at <a href="https://ionicframework.com/docs/components" target="_blank" rel="noopener noreferrer">Ionic Components</a></p>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ng-container>
+  </div>
+</ion-content>
